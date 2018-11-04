@@ -1,4 +1,4 @@
-module.exports = function(api, env) {
+module.exports = function(api, options, env) {
   const isEnvDevelopment = env === 'development';
   const isEnvProduction = env === 'production';
   const isEnvTest = env === 'test';
