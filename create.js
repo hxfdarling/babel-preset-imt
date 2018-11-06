@@ -33,8 +33,8 @@ module.exports = function(api, options, env) {
           // Users cannot override this behavior because this Babel
           // configuration is highly tuned for ES5 support
           ignoreBrowserslistConfig: true,
-          // Do not transform modules to CJS
-          modules: false,
+          // 转化为commonjs，为了支持module.exports => export default
+          modules: 'commonjs',
         },
       ],
       [
