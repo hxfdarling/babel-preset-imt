@@ -50,6 +50,7 @@ module.exports = function(api, options, env) {
       ],
     ].filter(Boolean),
     plugins: [
+      [require('babel-plugin-jsx-if-directive'), {}],
       // 优化lodash导入
       require('babel-plugin-lodash'),
 
