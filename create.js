@@ -48,6 +48,7 @@ module.exports = function(api, options, env) {
           useBuiltIns: true,
         },
       ],
+      [require('@babel/preset-flow').default],
     ].filter(Boolean),
     plugins: [
       // 优化lodash导入
