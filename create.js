@@ -51,6 +51,7 @@ module.exports = function(api, options, env) {
       [require('@babel/preset-flow').default],
     ].filter(Boolean),
     plugins: [
+      [require('babel-plugin-jsx-if-directive'), {}],
       // 优化lodash导入
       require('babel-plugin-lodash'),
 
