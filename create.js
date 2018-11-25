@@ -2,7 +2,7 @@ module.exports = function(api, options, env) {
   const isEnvDevelopment = env === 'development';
   const isEnvProduction = env === 'production';
   const isEnvTest = env === 'test';
-
+  const { isSSR } = options;
   if (!isEnvDevelopment && !isEnvProduction && !isEnvTest) {
     throw new Error(
       `${'Using `babel-preset-imt` requires that you specify `NODE_ENV` or '
@@ -65,7 +65,7 @@ module.exports = function(api, options, env) {
           // https://babeljs.io/docs/en/babel-plugin-transform-runtime#useesmodules
           // We should turn this on once the lowest version of Node LTS
           // supports ES Modules.
-          useESModules: isEnvDevelopment || isEnvProduction,
+          useESModules: isSSR ? false : isEnvDevelopment || isEnvProduction,
         },
       ],
 
